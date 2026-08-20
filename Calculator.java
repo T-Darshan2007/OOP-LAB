@@ -1,17 +1,29 @@
+import java.util.Scanner;
 
-
-public class Calculator{
-    public void add(int num1, int num2){
-        System.out.println("add :" + (num1+num2));
-    }
-
-    public void sub(int num1, int num2){
-        System.out.println("sub :" + (num1-num2));
-    }
-
+public class Calculator {
     public static void main(String[] args) {
-        Calculator ob = new Calculator();
-        ob.add(10, 11);
-        ob.sub(13, 3);
+        Scanner inp = new Scanner(System.in);
+        System.out.println("Calculator:-");
+        System.out.println("Enter two numbers and an operand(+,-,*,/)");
+        double a = inp.nextDouble();
+        double b = inp.nextDouble();
+        char o = inp.next().charAt(0);
+        if(o == '+') {
+            System.out.println(a+b);
+        }
+        else if(o == '-') {
+            System.out.println(a-b);
+        }
+        else if(o == '*') {
+            System.out.println(a*b);
+        }
+        else if(o == '/') {
+            if(b!=0){
+                System.out.println(a/b);
+            }
+            else {
+                System.out.println("Division by Zero Not possible");
+            }
+        }
     }
 }
